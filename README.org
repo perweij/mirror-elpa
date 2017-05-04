@@ -1,0 +1,41 @@
+#+TITLE:     mirror-elpa
+#+AUTHOR:    Per Weijnitz
+#+EMAIL:     per.weijnitz@gmail.com
+#+DATE:      2017-05-04
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:nil pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude
+#+STARTUP:   showall
+#+MENU:      Buffers
+
+
+
+* Changes
+ - 2017-05-04: Version 0.1 - initial version
+
+
+ | Status:   | Works                                  |
+ | Location: | [[https://github.com/perweij/mirror-elpa]] |
+
+* Description
+This GNU Emacs package can be used to mirror remote [[https://elpa.gnu.org/][GNU Emacs Lisp Package Archives]].
+
+This is especially useful for creating offline repositories, for use
+without an Internet connection.
+
+* Install
+Save =mirror-elpa.el= in one of your =load-path= directories.
+
+I have only tested this with GNU Emacs version 25.
+
+* Usage
+Here is an example of how to run the program to mirror the Marmalade repositorium.
+
+: emacs -Q --batch -l package.el -l ./mirror-elpa.el --eval='(progn (push (quote ("marmalade" . "http://marmalade-repo.org/packages/")) package-archives)(package-mirror-elpa "~/your-mirror-root"))'
+
+* Related work
+ - [[https://github.com/redguardtoo/elpa-mirror][elpa-mirror]] - a package used to mirror the packages you have already installed.
+ - [[https://github.com/stephanh/elpa-mirror/blob/master/src/main/scala/Elpa-Mirror.scala][elpa-mirror Scala]] - a Scala program to mirror files.
