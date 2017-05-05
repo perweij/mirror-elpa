@@ -34,7 +34,7 @@ I have only tested this with GNU Emacs version 25.
 * Usage
 Here is an example of how to run the program to mirror the Marmalade repositorium.
 
-: emacs -Q --batch -l package.el -l ./mirror-elpa.el --eval='(progn (push (quote ("marmalade" . "http://marmalade-repo.org/packages/")) package-archives)(package-mirror-elpa "~/your-mirror-root"))'
+: emacs -Q --batch -l package.el -l ./mirror-elpa.el --eval='(progn (push (quote ("marmalade" . "http://marmalade-repo.org/packages/")) package-archives)(mirror-elpa "~/your-mirror-root"))'
 
 * Related work
  - [[https://github.com/redguardtoo/elpa-mirror][elpa-mirror]] - a package used to mirror the packages you have already installed.
